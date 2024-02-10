@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://sv0l3itv4n4s"]
+[gd_scene load_steps=22 format=3 uid="uid://sv0l3itv4n4s"]
 
 [ext_resource type="Texture2D" uid="uid://5w1bkncsq7q4" path="res://Assets/Sprites/Claire.png" id="1_f8aej"]
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_m5wcp"]
+[ext_resource type="Script" path="res://AnimatedSprite2D.gd" id="2_en44o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8rfc7"]
 atlas = ExtResource("1_f8aej")
@@ -135,7 +136,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run right",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kctq"]
@@ -150,16 +151,11 @@ script = ExtResource("1_m5wcp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_sweq8")
 animation = &"Run backward"
-frame_progress = 0.998685
+frame_progress = 0.309887
+script = ExtResource("2_en44o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 visible = false
 position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_6kctq")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position_smoothing_enabled = true
-position_smoothing_speed = 1.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
