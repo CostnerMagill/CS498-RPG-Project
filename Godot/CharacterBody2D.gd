@@ -18,20 +18,11 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_pressed("ui_up"):
 		_animated_sprite.play("Run forward")
-	else:
-		_animated_sprite.stop()
-	
-	if Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("ui_down"):
 		_animated_sprite.play("Run backward")
-	else:
-		_animated_sprite.stop()
-		
-	if Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left"):
 		_animated_sprite.play("Run left")
-	else:
-		_animated_sprite.stop()
-	
-	if Input.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("ui_right"):
 		_animated_sprite.play("Run right")
 	else:
 		_animated_sprite.stop()

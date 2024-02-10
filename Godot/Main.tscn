@@ -150,7 +150,7 @@ script = ExtResource("1_m5wcp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_sweq8")
 animation = &"Run backward"
-frame_progress = 0.998685
+frame_progress = 0.497907
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 visible = false
