@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5w1bkncsq7q4"
-path="res://.godot/imported/Claire.png-00a2dbf0e8149736ddffd1d054125a43.ctex"
+uid="uid://dgy672c41384m"
+path="res://.godot/imported/Claire_Walk_Forward4.png-79a4422b592d52bcc5035ce6b656e071.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Claire.png"
-dest_files=["res://.godot/imported/Claire.png-00a2dbf0e8149736ddffd1d054125a43.ctex"]
+source_file="res://Assets/Animations/Claire/Claire_Walk_Forward4.png"
+dest_files=["res://.godot/imported/Claire_Walk_Forward4.png-79a4422b592d52bcc5035ce6b656e071.ctex"]
 
 [params]
 
