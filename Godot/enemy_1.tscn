@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0nc1bo48pqku"]
+
+[ext_resource type="Texture2D" uid="uid://dlhkbu28nkyqs" path="res://Assets/Animations/Claire/Claire_Walk_Right4.png" id="1_e25sd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nntao"]
+size = Vector2(13.3333, 27.6667)
+
+[node name="enemy_1" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_e25sd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-0.333333, 2.5)
+shape = SubResource("RectangleShape2D_nntao")
