@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxsmxyoxlkab0"]
+
+[ext_resource type="Texture2D" uid="uid://boyrsjdxliijo" path="res://Image/menu.png" id="1_1w70a"]
+[ext_resource type="Script" path="res://character_menu.gd" id="1_wc4nu"]
+[ext_resource type="FontFile" uid="uid://bao50eqr5k7t8" path="res://Image/REFUSE.otf" id="3_w5te1"]
+[ext_resource type="Texture2D" uid="uid://dwqfloh3yepyv" path="res://Image/select_arrow.png" id="4_qpopa"]
+
+[node name="Character_Menu" type="CanvasLayer"]
+script = ExtResource("1_wc4nu")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 65.0
+offset_right = 1106.0
+offset_bottom = 574.0
+texture = ExtResource("1_1w70a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 68.0
+offset_right = 280.0
+offset_bottom = 472.0
+
+[node name="Party" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_w5te1")
+theme_override_font_sizes/font_size = 45
+text = "Party"
+
+[node name="Inventory" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_w5te1")
+theme_override_font_sizes/font_size = 45
+text = "Inventory"
+
+[node name="Save" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_w5te1")
+theme_override_font_sizes/font_size = 45
+text = "Save"
+
+[node name="Options" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_w5te1")
+theme_override_font_sizes/font_size = 45
+text = "Options"
+
+[node name="Exit" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_w5te1")
+theme_override_font_sizes/font_size = 45
+text = "Exit"
+
+[node name="TextureRect" type="TextureRect" parent="Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 16.0
+offset_right = 27.0
+offset_bottom = 50.0
+texture = ExtResource("4_qpopa")
+expand_mode = 4

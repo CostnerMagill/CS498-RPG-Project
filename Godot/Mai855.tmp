@@ -1,6 +1,5 @@
-[gd_scene load_steps=22 format=3 uid="uid://sv0l3itv4n4s"]
+[gd_scene load_steps=20 format=3 uid="uid://sv0l3itv4n4s"]
 
-[ext_resource type="PackedScene" uid="uid://cxsmxyoxlkab0" path="res://character_menu.tscn" id="1_ff454"]
 [ext_resource type="Script" path="res://Claire.gd" id="1_pwmsf"]
 [ext_resource type="Texture2D" uid="uid://01nv32dcutvd" path="res://Assets/Animations/Claire/Claire_Walk_Right1.png" id="2_oydcm"]
 [ext_resource type="Texture2D" uid="uid://vgn4eyshienr" path="res://Assets/Animations/Claire/Claire_Walk_Right2.png" id="3_ywrgo"]
@@ -18,22 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://bm2p6coo4ewob" path="res://Assets/Animations/Claire/Claire_Walk_Left2.png" id="15_q3scr"]
 [ext_resource type="Texture2D" uid="uid://c72imw7528681" path="res://Assets/Animations/Claire/Claire_Walk_Left3.png" id="16_jjxgh"]
 [ext_resource type="Texture2D" uid="uid://bv4ymk0ba6yuf" path="res://Assets/Animations/Claire/Claire_Walk_Left4.png" id="17_gk2yx"]
-[ext_resource type="Texture2D" uid="uid://btp2a5j58gi8h" path="res://Image/road.png" id="18_y4n2g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tuomy"]
-radius = 8.5
-height = 34.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nby6y"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_64ncc")
-}],
-"loop": true,
-"name": &"Down",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_oydcm")
@@ -49,14 +37,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"East",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_b0eub")
-}],
-"loop": true,
-"name": &"Left",
 "speed": 5.0
 }, {
 "frames": [{
@@ -78,14 +58,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_oydcm")
-}],
-"loop": true,
-"name": &"Right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("10_64ncc")
 }, {
 "duration": 1.0,
@@ -99,14 +71,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"South",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_gv4dw")
-}],
-"loop": true,
-"name": &"Up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -129,28 +93,17 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Character_Menu" parent="." instance=ExtResource("1_ff454")]
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -578.0
-offset_top = -539.0
-offset_right = 584.481
-offset_bottom = 623.481
-texture = ExtResource("18_y4n2g")
-expand_mode = 2
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
 
 [node name="Claire" type="CharacterBody2D" parent="."]
 motion_mode = 1
 script = ExtResource("1_pwmsf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Claire"]
-scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_tuomy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Claire"]
-position = Vector2(1, 0)
-scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_nby6y")
-animation = &"Down"
-
-[node name="Camera2D" type="Camera2D" parent="."]
+animation = &"West"
+frame_progress = 0.591965
