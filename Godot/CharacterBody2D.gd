@@ -1,30 +1,25 @@
 extends CharacterBody2D
 
+@onready var progress_bar = $ProgressBar
+@onready var _focus = $focus
 
-@export var speed = 300.0
+@export var MAX_HEALTH: float = 10
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-func get_input():
-	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = input_direction * speed
 
-func _physics_process(delta):
-	get_input()
-	move_and_slide()
-	
-func _ready():
-	pass # Replace with function body.
-@onready var _animated_sprite = $AnimatedSprite2D
+var health: float = 10:
+	set(value):
+		health = value
+		_update_progress_bar()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	if Input.is_action_pressed("ui_up"):
-		_animated_sprite.play("backward")
-	elif Input.is_action_pressed("ui_down"):
-		_animated_sprite.play("forward")
-	elif Input.is_action_pressed("ui_left"):
-		_animated_sprite.play("left")
-	elif Input.is_action_pressed("ui_right"):
-		_animated_sprite.play("right")
-	else:
-		_animated_sprite.stop()
+func _update_progress_bar():
+	progress_bar.value = (health/MAX_HEALTH) * 100
+
+func focus():
+	_focus.show()
+
+func unfocus():
+	_focus.hide()
+
+func take_damage(value):
+	health -= value
+	_update_progress_bar()

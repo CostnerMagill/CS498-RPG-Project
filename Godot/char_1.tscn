@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://x7e2ohunok1l"]
+[gd_scene load_steps=21 format=3 uid="uid://x7e2ohunok1l"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_16mxc"]
 [ext_resource type="Texture2D" uid="uid://cu3fag6msuvka" path="res://Assets/Animations/Claire/Claire_Walk_Backward1.png" id="2_4yh0j"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://vgn4eyshienr" path="res://Assets/Animations/Claire/Claire_Walk_Right2.png" id="15_bwa5l"]
 [ext_resource type="Texture2D" uid="uid://b1qs0fj2nr3kp" path="res://Assets/Animations/Claire/Claire_Walk_Right3.png" id="16_p6byv"]
 [ext_resource type="Texture2D" uid="uid://dlhkbu28nkyqs" path="res://Assets/Animations/Claire/Claire_Walk_Right4.png" id="17_o5wte"]
+[ext_resource type="Texture2D" uid="uid://d008pgeue38w1" path="res://Assets/arrow.png" id="18_rbj83"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rmr48"]
 animations = [{
@@ -99,9 +100,22 @@ script = ExtResource("1_16mxc")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_rmr48")
-animation = &"backward"
+animation = &"left"
+
+[node name="focus" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(-16.333, 0.5)
+texture = ExtResource("18_rbj83")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_k1nnv")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 7.333
+offset_right = 108.333
+offset_bottom = 27.0
+scale = Vector2(0.3, 0.3)
+value = 100.0
