@@ -3,10 +3,30 @@
 [ext_resource type="PackedScene" uid="uid://u8fyc3sh3r4y" path="res://player_group.tscn" id="1_a0scq"]
 [ext_resource type="PackedScene" uid="uid://csdp5yqdf47pu" path="res://enemy_group.tscn" id="2_o4ljd"]
 
-[node name="Node2D" type="Node2D"]
+[node name="battle_scene" type="Node2D"]
 
 [node name="player_group" parent="." instance=ExtResource("1_a0scq")]
-position = Vector2(961, 0)
+position = Vector2(1013, 58)
 
 [node name="enemy_group" parent="." instance=ExtResource("2_o4ljd")]
-position = Vector2(227, 304)
+position = Vector2(87, 45)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="button_controls" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -307.0
+offset_top = -56.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 10
+size_flags_vertical = 10
+alignment = 1
+
+[node name="Attack" type="Button" parent="CanvasLayer/button_controls"]
+layout_mode = 2
+text = "Attack"

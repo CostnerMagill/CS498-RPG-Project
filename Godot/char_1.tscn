@@ -99,9 +99,7 @@ script = ExtResource("1_16mxc")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_rmr48")
-animation = &"forward"
-frame = 1
-frame_progress = 0.730319
+animation = &"backward"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

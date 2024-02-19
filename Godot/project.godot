@@ -14,3 +14,7 @@ config/name="CS 498 RPG Project"
 run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor]
+
+run/main_run_args="--rendering-driver opengl3"

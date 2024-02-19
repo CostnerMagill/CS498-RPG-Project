@@ -19,9 +19,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_pressed("ui_up"):
-		_animated_sprite.play("forward")
-	elif Input.is_action_pressed("ui_down"):
 		_animated_sprite.play("backward")
+	elif Input.is_action_pressed("ui_down"):
+		_animated_sprite.play("forward")
 	elif Input.is_action_pressed("ui_left"):
 		_animated_sprite.play("left")
 	elif Input.is_action_pressed("ui_right"):
