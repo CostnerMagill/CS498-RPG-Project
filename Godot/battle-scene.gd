@@ -7,9 +7,9 @@ var enemies: Array = []
 var players: Array = []
 var action_queue: Array = []
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("What")
 	players = player_group.players;
 	enemies = enemy_group.enemies;
 	for i in players.size():
@@ -19,6 +19,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	players[0].focus()
 	pass
+
+
 
 
