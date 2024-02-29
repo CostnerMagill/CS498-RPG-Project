@@ -1,6 +1,6 @@
 extends Node2D
 
-var enemies: Array = []
+@export var enemies: Array = []
 var action_queue: Array = []
 var is_battling: bool = false
 var index: int = 0

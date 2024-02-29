@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://sv0l3itv4n4s"]
+[gd_scene load_steps=4 format=3 uid="uid://sv0l3itv4n4s"]
 
 [ext_resource type="PackedScene" uid="uid://u8fyc3sh3r4y" path="res://player_group.tscn" id="1_a0scq"]
+[ext_resource type="Script" path="res://battle-scene.gd" id="1_qjai2"]
 [ext_resource type="PackedScene" uid="uid://csdp5yqdf47pu" path="res://enemy_group.tscn" id="2_o4ljd"]
 
 [node name="battle_scene" type="Node2D"]
+script = ExtResource("1_qjai2")
 
 [node name="player_group" parent="." instance=ExtResource("1_a0scq")]
 position = Vector2(1013, 58)
