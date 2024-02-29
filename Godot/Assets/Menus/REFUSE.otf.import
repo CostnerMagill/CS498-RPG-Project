@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bao50eqr5k7t8"
-path="res://.godot/imported/REFUSE.otf-fe28cc013aca95e4852b6c54fed157ff.fontdata"
+path="res://.godot/imported/REFUSE.otf-38dfbd4acc14019fde96c76d2d031867.fontdata"
 
 [deps]
 
-source_file="res://Image/REFUSE.otf"
-dest_files=["res://.godot/imported/REFUSE.otf-fe28cc013aca95e4852b6c54fed157ff.fontdata"]
+source_file="res://Assets/Menus/REFUSE.otf"
+dest_files=["res://.godot/imported/REFUSE.otf-38dfbd4acc14019fde96c76d2d031867.fontdata"]
 
 [params]
 

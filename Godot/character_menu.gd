@@ -17,6 +17,7 @@ func _ready():
 	menu.visible = false
 	party_menu.visible = false
 	select_arrow.position.y = 50 + (arrow_position % 5) * 70
+	party_menu.connect("close_party_menu", _on_party_menu_close)
 
 # Handles inputs for the menu
 func _unhandled_input(event):
@@ -30,6 +31,7 @@ func _unhandled_input(event):
 			handle_menu(event)
 		menu_state.party:
 			party_menu.visible = true
+			party_menu.handle_input(event)
 		menu_state.inventory:
 			menu.visible = false
 		menu_state.options:
@@ -38,9 +40,6 @@ func _unhandled_input(event):
 			menu.visible = false
 		menu_state.exit:
 			menu.visible = false
-
-
-
 
 
 func handle_menu(event):
@@ -62,7 +61,13 @@ func handle_menu(event):
 		select_arrow.position.y = 50 + (arrow_position % 5) * 70
 	elif event.is_action_pressed("z"):
 		match arrow_position:
-			0, 1, 2, 3, 4: # Assuming all these positions lead to the party menu for simplicity
+			0, 1, 2, 3, 4: 
 				menu.visible = false
 				party_menu.visible = true
 				current_menu_state = menu_state.party
+
+
+func _on_party_menu_close():
+	party_menu.visible = false
+	menu.visible = true
+	current_menu_state = menu_state.menu  # Change the menu state back to the regular menu
