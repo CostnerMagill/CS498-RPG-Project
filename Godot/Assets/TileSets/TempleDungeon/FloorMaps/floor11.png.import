@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dll0dm34ltcg3"
-path="res://.godot/imported/dirt1.png-da6449ce4ca2f92719b867ac36beaa21.ctex"
+uid="uid://bny5wcxca8ctt"
+path="res://.godot/imported/floor11.png-49430efec4ccbaf0570daab43d6c953a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TileSets/Outside/dirt1.png"
-dest_files=["res://.godot/imported/dirt1.png-da6449ce4ca2f92719b867ac36beaa21.ctex"]
+source_file="res://Assets/TileSets/TempleDungeon/FloorMaps/floor11.png"
+dest_files=["res://.godot/imported/floor11.png-49430efec4ccbaf0570daab43d6c953a.ctex"]
 
 [params]
 
