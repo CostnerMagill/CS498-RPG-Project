@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var _focus = $focus
 
 @export var MAX_HEALTH: float = 10
+@export var SPEED: float = 2
 
 
 var health: float = 10:
