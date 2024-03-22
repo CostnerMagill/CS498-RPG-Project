@@ -8,7 +8,7 @@ var index: int = 0
 
 signal next_player
 
-@onready var choice = $"../CanvasLayer/choice"
+# @onready var choice = $"../CanvasLayer/choice"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -49,9 +49,9 @@ func switch_focus(x, y):
     enemies[x].focus()
     enemies[y].unfocus()
 
-func show_choice():
-    choice.show()
-    choice.find_child("Attack").grab_focus()
+#func show_choice():
+#    choice.show()
+#    choice.find_child("Attack").grab_focus()
 
 func _reset_focus():
     index = 0
@@ -63,6 +63,6 @@ func _start_choosing():
     enemies[0].focus()
 
 
-func _on_attack_pressed():
-    choice.hide()
-    _start_choosing()
+#func _on_attack_pressed():
+#    choice.hide()
+#    _start_choosing()
