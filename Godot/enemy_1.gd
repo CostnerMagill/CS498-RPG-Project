@@ -11,7 +11,7 @@ class move:
     var damage: int
     var name: String
 
-@onready var attack1: move
+@onready var attack1 = move.new()
 @onready var move_list: Array = []
 
 
@@ -34,10 +34,6 @@ func focus():
 
 func unfocus():
     _focus.hide()
-
-func take_damage(value):
-    health -= value
-    _update_progress_bar()
 
 func take_damage(value):
     health -= value

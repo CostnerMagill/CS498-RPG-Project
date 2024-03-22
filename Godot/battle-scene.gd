@@ -30,10 +30,6 @@ func _ready():
     action_queue.resize(characters.size())
     battle_logic()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-    pass
-
 # Custom sort based on speed of characters
 func speed_sort(a, b):
     return a.SPEED > b.SPEED
@@ -56,9 +52,9 @@ func select_player_moves():
         var player_index: int = characters.find(players[i])
         var target: int = select_enemy_target()
         var selected_move: move = players[i].select_move()
-        var temp_action: action
+        var temp_action = action.new()
         temp_action.attack = selected_move
-        temp_action.target_index = target
+        temp_action.targwet_index = target
         action_queue[player_index] = temp_action
         players[i].unfocus()
 
@@ -88,7 +84,7 @@ func select_enemy_moves():
         var enemy_index: int = characters.find(enemies[i])
         var enemy_move: move = enemies[i].select_move()
         var target: int = randi() % target_array.size()
-        var temp_action: action
+        var temp_action = action.new()
         temp_action.attack = enemy_move
         temp_action.target_index = target
         action_queue[enemy_index] = temp_action

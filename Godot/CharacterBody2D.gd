@@ -11,7 +11,7 @@ class move:
     var damage: int
     var name: String
 
-@onready var attack1: move
+@onready var attack1 = move.new()
 @onready var move_list: Array = []
 
 var health: float = 10:
