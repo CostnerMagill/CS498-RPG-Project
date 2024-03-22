@@ -4,23 +4,46 @@ extends CharacterBody2D
 @onready var _focus = $focus
 
 @export var MAX_HEALTH: float = 10
+@export var IS_ALIVE: bool = true
 @export var SPEED: float = 2
+
+class move:
+    var damage: int
+    var name: String
+
+@onready var attack1: move
+@onready var move_list: Array = []
 
 
 var health: float = 10:
-	set(value):
-		health = value
-		_update_progress_bar()
+    set(value):
+        health = value
+        _update_progress_bar()
+
+
+func _ready():
+    attack1.name = "Attack 1"
+    attack1.damage = 5
+    move_list.append(attack1)
 
 func _update_progress_bar():
-	progress_bar.value = (health/MAX_HEALTH) * 100
+    progress_bar.value = (health/MAX_HEALTH) * 100
 
 func focus():
-	_focus.show()
+    _focus.show()
 
 func unfocus():
-	_focus.hide()
+    _focus.hide()
 
 func take_damage(value):
-	health -= value
-	_update_progress_bar()
+    health -= value
+    _update_progress_bar()
+
+func take_damage(value):
+    health -= value
+    _update_progress_bar()
+    if health <= 0:
+        IS_ALIVE = false
+
+func select_move():
+    return move_list[0]
