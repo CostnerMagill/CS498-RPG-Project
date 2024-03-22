@@ -11,10 +11,16 @@ config_version=5
 [application]
 
 config/name="CS 498 RPG Project"
+run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [layer_names]
 
+2d_physics/layer_1="Walls"
 2d_navigation/layer_1="Floor"
 2d_navigation/layer_2="Wall"
