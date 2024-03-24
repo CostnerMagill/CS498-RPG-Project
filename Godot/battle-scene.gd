@@ -121,13 +121,13 @@ func select_enemy_moves():
     for i in players.size():
         target_array.append(characters.find(players[i]))
     for i in enemies.size():
-        var enemy_index: int = characters.find(enemies[i])
+        var enemy_location: int = characters.find(enemies[i])
         var enemy_move = enemies[i].select_move()
         var target: int = target_array[randi() % target_array.size()]
         var temp_action = action.new()
         temp_action.attack = enemy_move
         temp_action.target_index = target
-        action_queue[enemy_index] = temp_action
+        action_queue[enemy_location] = temp_action
     selecting_enemy_moves = false
     attacking = true
 
