@@ -6,6 +6,7 @@ var arrow_position: int = 0
 # menu objects
 @onready var menu = $Control/NinePatchRect
 @onready var party_menu = $Control/party_menu
+@onready var options_menu = $Control/options_menu
 
 # menu state controls
 enum menu_state {default, menu, party, inventory, options, save, exit}
@@ -18,6 +19,7 @@ func _ready():
 	party_menu.visible = false
 	select_arrow.position.y = 50 + (arrow_position % 5) * 70
 	party_menu.connect("close_party_menu", _on_party_menu_close)
+	options_menu.connect("close_options_menu", _on_options_menu_close)
 
 # Handles inputs for the menu
 func _unhandled_input(event):
@@ -61,13 +63,35 @@ func handle_menu(event):
 		select_arrow.position.y = 50 + (arrow_position % 5) * 70
 	elif event.is_action_pressed("z"):
 		match arrow_position:
-			0, 1, 2, 3, 4: 
+			0: 
 				menu.visible = false
 				party_menu.visible = true
 				current_menu_state = menu_state.party
+			1:
+				menu.visible = false
+				party_menu.visible = true
+				current_menu_state = menu_state.party
+				#current_menu_state = menu_state.inventory
+			2:
+				menu.visible = false
+				party_menu.visible = true
+				current_menu_state = menu_state.party
+				#current_menu_state = menu_state.save
+			3:
+				menu.visible = false
+				party_menu.visible = true
+				current_menu_state = menu_state.party
+				#current_menu_state = menu_state.options
+			4:
+				get_tree().quit()
 
 
 func _on_party_menu_close():
 	party_menu.visible = false
 	menu.visible = true
-	current_menu_state = menu_state.menu  # Change the menu state back to the regular menu
+	current_menu_state = menu_state.menu  
+
+func _on_options_menu_close():
+	options_menu.visible = false
+	menu.visible = true
+	current_menu_state = menu_state.menu
