@@ -10,15 +10,7 @@ config_version=5
 
 [application]
 
-config/name="CS 498 RPG Project"
+config/name="Godot"
 run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
-
-[editor]
-
-run/main_run_args="--rendering-driver opengl3"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg")

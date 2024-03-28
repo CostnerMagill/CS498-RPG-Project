@@ -1,25 +1,18 @@
-extends CharacterBody2D
+extends character_base
 
-@onready var progress_bar = $ProgressBar
-@onready var _focus = $focus
-
-@export var MAX_HEALTH: float = 10
+# @export var MAX_HEALTH: float = 10
+# @export var SPEED: float = 10
 
 
-var health: float = 10:
-	set(value):
-		health = value
-		_update_progress_bar()
+@onready var attack1 = move.new()
+# @onready var move_list: Array = []
 
-func _update_progress_bar():
-	progress_bar.value = (health/MAX_HEALTH) * 100
 
-func focus():
-	_focus.show()
+func _ready():
+	SPEED = 3
+	MAX_HEALTH = 20
+	health = MAX_HEALTH
+	attack1.name = "Attack 1"
+	attack1.damage = 5
+	move_list.append(attack1)
 
-func unfocus():
-	_focus.hide()
-
-func take_damage(value):
-	health -= value
-	_update_progress_bar()
