@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://u8fyc3sh3r4y" path="res://player_group.tscn" id="1_a0scq"]
 [ext_resource type="Script" path="res://battle-scene.gd" id="1_qjai2"]
 [ext_resource type="PackedScene" uid="uid://csdp5yqdf47pu" path="res://enemy_group.tscn" id="2_o4ljd"]
-[ext_resource type="Texture2D" uid="uid://bumjm3jmm8tf" path="res://Assets/battle-template_white.png" id="4_xkiw2"]
-[ext_resource type="Texture2D" uid="uid://bwhu2wk5mplqs" path="res://Assets/syringe.png" id="5_3276i"]
+[ext_resource type="Texture2D" uid="uid://bumjm3jmm8tf" path="res://Assets/UI/Battle-UI/battle-template_white.png" id="4_xkiw2"]
+[ext_resource type="Texture2D" uid="uid://bwhu2wk5mplqs" path="res://Assets/UI/Battle-UI/syringe.png" id="5_3276i"]
 
 [node name="battle_scene" type="Node2D"]
 script = ExtResource("1_qjai2")

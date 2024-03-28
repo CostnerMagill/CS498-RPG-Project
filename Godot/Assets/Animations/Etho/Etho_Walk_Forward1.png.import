@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bumjm3jmm8tf"
-path="res://.godot/imported/battle-template_white.png-e04607ef4cc23506bca6ce9cf30b93c9.ctex"
+uid="uid://cjhkpgrj3ir3l"
+path="res://.godot/imported/Etho_Walk_Forward1.png-9932a3c0cb4524161a609f251c8f5576.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/battle-template_white.png"
-dest_files=["res://.godot/imported/battle-template_white.png-e04607ef4cc23506bca6ce9cf30b93c9.ctex"]
+source_file="res://Assets/Animations/Etho/Etho_Walk_Forward1.png"
+dest_files=["res://.godot/imported/Etho_Walk_Forward1.png-9932a3c0cb4524161a609f251c8f5576.ctex"]
 
 [params]
 

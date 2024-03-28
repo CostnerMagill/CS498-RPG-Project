@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://vgn4eyshienr" path="res://Assets/Animations/Claire/Claire_Walk_Right2.png" id="15_bwa5l"]
 [ext_resource type="Texture2D" uid="uid://b1qs0fj2nr3kp" path="res://Assets/Animations/Claire/Claire_Walk_Right3.png" id="16_p6byv"]
 [ext_resource type="Texture2D" uid="uid://dlhkbu28nkyqs" path="res://Assets/Animations/Claire/Claire_Walk_Right4.png" id="17_o5wte"]
-[ext_resource type="Texture2D" uid="uid://d008pgeue38w1" path="res://Assets/arrow.png" id="18_rbj83"]
+[ext_resource type="Texture2D" uid="uid://d008pgeue38w1" path="res://Assets/UI/Battle-UI/arrow.png" id="18_rbj83"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rmr48"]
 animations = [{

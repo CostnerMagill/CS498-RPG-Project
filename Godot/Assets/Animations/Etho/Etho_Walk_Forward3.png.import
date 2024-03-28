@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d008pgeue38w1"
-path="res://.godot/imported/arrow.png-57f8c059c3343415ea6369e587d21c52.ctex"
+uid="uid://blb2vcxvpmw7a"
+path="res://.godot/imported/Etho_Walk_Forward3.png-9132fc8842c43faa864344db2d3dd71b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/arrow.png"
-dest_files=["res://.godot/imported/arrow.png-57f8c059c3343415ea6369e587d21c52.ctex"]
+source_file="res://Assets/Animations/Etho/Etho_Walk_Forward3.png"
+dest_files=["res://.godot/imported/Etho_Walk_Forward3.png-9132fc8842c43faa864344db2d3dd71b.ctex"]
 
 [params]
 

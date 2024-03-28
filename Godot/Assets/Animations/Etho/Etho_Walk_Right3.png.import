@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwhu2wk5mplqs"
-path="res://.godot/imported/syringe.png-a66511ea4c313e4a58e35593115a4673.ctex"
+uid="uid://cqhtq0wtu2miu"
+path="res://.godot/imported/Etho_Walk_Right3.png-8e99e4ee732b3e1347798bfec7801209.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/syringe.png"
-dest_files=["res://.godot/imported/syringe.png-a66511ea4c313e4a58e35593115a4673.ctex"]
+source_file="res://Assets/Animations/Etho/Etho_Walk_Right3.png"
+dest_files=["res://.godot/imported/Etho_Walk_Right3.png-8e99e4ee732b3e1347798bfec7801209.ctex"]
 
 [params]
 
