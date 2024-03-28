@@ -284,4 +284,7 @@ scale = Vector2(1.57363, 1.45227)
 texture = ExtResource("5_3276i")
 metadata/_edit_use_anchors_ = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
 [connection signal="next_player" from="enemy_group" to="player_group" method="_on_enemy_group_next_player"]

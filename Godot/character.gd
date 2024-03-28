@@ -1,28 +1,29 @@
-class_name character_base extends CharacterBody2D
+extends CharacterBody2D
+
+@export var MAX_HEALTH: float
+@export var SPEED: float
+@export var IS_ALIVE: bool = true
 
 @onready var progress_bar = $ProgressBar
 @onready var _focus = $focus
-
-@export var IS_ALIVE: bool = true
-@export var MAX_HEALTH: float
-@export var SPEED: int
 
 class move:
     var damage: int
     var name: String
 
-# @onready var attack1 = move.new()
+@onready var attack1 = move.new()
 @onready var move_list: Array = []
 
-var health: float:
+var health: float = MAX_HEALTH:
     set(value):
         health = value
         _update_progress_bar()
 
-# func _ready():
-#     attack1.name = "Attack 1"
-#     attack1.damage = 5
-#     move_list.append(attack1)
+func _ready():
+    health = MAX_HEALTH
+    attack1.name = "Attack 1"
+    attack1.damage = 5
+    move_list.append(attack1)
 
 func _update_progress_bar():
     progress_bar.value = (health/MAX_HEALTH) * 100
