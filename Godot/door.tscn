@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://jnpgugeawxrt"]
+
+[ext_resource type="Script" path="res://door.gd" id="1_hdhp7"]
+
+[node name="Door" type="Area2D"]
+script = ExtResource("1_hdhp7")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
