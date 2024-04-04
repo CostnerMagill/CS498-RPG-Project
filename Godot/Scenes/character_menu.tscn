@@ -1,0 +1,320 @@
+[gd_scene load_steps=12 format=3 uid="uid://cxsmxyoxlkab0"]
+
+[ext_resource type="Script" path="res://Scripts/character_menu.gd" id="1_wc4nu"]
+[ext_resource type="Texture2D" uid="uid://dsh3gbfp15qyk" path="res://Assets/UI/MenuUI/menu_sprite.png" id="2_lfded"]
+[ext_resource type="Texture2D" uid="uid://bbcbgdpn5aa1q" path="res://Assets/UI/MenuUI/arrow_sprite.png" id="4_m2b0w"]
+[ext_resource type="Texture2D" uid="uid://dy77qycscr5ti" path="res://Assets/UI/MenuUI/party_menu.png" id="5_ofupe"]
+[ext_resource type="FontFile" uid="uid://bao50eqr5k7t8" path="res://Assets/UI/MenuUI/REFUSE.otf" id="6_7iju5"]
+[ext_resource type="Script" path="res://Scripts/party_menu.gd" id="6_jo4we"]
+[ext_resource type="Texture2D" uid="uid://e30tw1tsngdu" path="res://Assets/Animations/Claire/Claire_Walk_Forward1.png" id="7_q2og3"]
+[ext_resource type="Script" path="res://Scripts/options_menu.gd" id="8_vp6uv"]
+[ext_resource type="Texture2D" uid="uid://cjhkpgrj3ir3l" path="res://Assets/Animations/Etho/Etho_Walk_Forward1.png" id="8_yx8ua"]
+[ext_resource type="Texture2D" uid="uid://cum5852cpbt2y" path="res://Assets/Animations/Flynn/Flynn_Walk_Forward1.png" id="9_ftjeq"]
+[ext_resource type="Texture2D" uid="uid://k6bsauq55wmp" path="res://Assets/Animations/Kavya/Kavya_Walk_Forward1.png" id="10_cg071"]
+
+[node name="Character_Menu" type="CanvasLayer"]
+script = ExtResource("1_wc4nu")
+
+[node name="Control" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.682
+anchor_top = 0.1
+anchor_right = 0.96
+anchor_bottom = 0.886
+offset_left = 0.335938
+offset_top = 0.199997
+offset_right = 0.0799561
+offset_bottom = -0.128052
+texture = ExtResource("2_lfded")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.175
+anchor_top = 0.171
+anchor_right = 0.9
+anchor_bottom = 0.859
+offset_top = -0.0390015
+offset_bottom = -0.231018
+metadata/_edit_use_anchors_ = true
+
+[node name="Party" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 65)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_7iju5")
+theme_override_font_sizes/font_size = 45
+text = "Party"
+
+[node name="Inventory" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(100, 65)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_7iju5")
+theme_override_font_sizes/font_size = 45
+text = "Inventory"
+
+[node name="Save" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_7iju5")
+theme_override_font_sizes/font_size = 45
+text = "Save"
+
+[node name="Options" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_7iju5")
+theme_override_font_sizes/font_size = 45
+text = "Options"
+
+[node name="Exit" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_7iju5")
+theme_override_font_sizes/font_size = 45
+text = "Exit"
+
+[node name="TextureRect" type="TextureRect" parent="Control/NinePatchRect"]
+layout_direction = 1
+layout_mode = 0
+offset_left = 12.0
+offset_top = 50.0
+offset_right = 68.0
+offset_bottom = 166.0
+texture = ExtResource("4_m2b0w")
+expand_mode = 4
+
+[node name="party_menu" type="NinePatchRect" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.00154321
+anchor_right = 1.0
+anchor_bottom = 1.00154
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ofupe")
+script = ExtResource("6_jo4we")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Control/party_menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.231373, 0.231373, 0.231373, 0.784314)
+
+[node name="sprite" type="TextureRect" parent="Control/party_menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ofupe")
+
+[node name="Claire" type="Label" parent="Control/party_menu"]
+layout_mode = 1
+offset_left = 789.0
+offset_top = 68.0
+offset_right = 1018.0
+offset_bottom = 135.0
+theme_override_fonts/font = ExtResource("6_7iju5")
+theme_override_font_sizes/font_size = 50
+text = "Claire"
+
+[node name="Etho" type="Label" parent="Control/party_menu"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 224.0
+offset_right = 1018.0
+offset_bottom = 291.0
+theme_override_fonts/font = ExtResource("6_7iju5")
+theme_override_font_sizes/font_size = 50
+text = "Etho"
+
+[node name="Flynn" type="Label" parent="Control/party_menu"]
+layout_mode = 0
+offset_left = 789.0
+offset_top = 388.0
+offset_right = 1018.0
+offset_bottom = 455.0
+theme_override_fonts/font = ExtResource("6_7iju5")
+theme_override_font_sizes/font_size = 50
+text = "Flynn"
+
+[node name="Kavya" type="Label" parent="Control/party_menu"]
+layout_mode = 0
+offset_left = 791.0
+offset_top = 542.0
+offset_right = 1020.0
+offset_bottom = 609.0
+theme_override_fonts/font = ExtResource("6_7iju5")
+theme_override_font_sizes/font_size = 50
+text = "Kavya"
+
+[node name="TextureRect" type="TextureRect" parent="Control/party_menu"]
+layout_direction = 1
+layout_mode = 0
+offset_left = 548.0
+offset_top = -41.0
+offset_right = 743.0
+offset_bottom = 237.0
+texture = ExtResource("4_m2b0w")
+expand_mode = 4
+
+[node name="Claire_sprite" type="TextureRect" parent="Control/party_menu"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -19.0
+offset_right = 213.0
+offset_bottom = 400.0
+texture = ExtResource("7_q2og3")
+
+[node name="Description" type="RichTextLabel" parent="Control/party_menu/Claire_sprite"]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 45.0
+offset_right = 587.0
+offset_bottom = 406.0
+text = "Curious and bright, Claire made the most of her life in the war. She finds a lot of enjoyment in reading and learning, whether it be about Arelsian culture, Monarch’s history and technology, or entire other worlds outside her own. Most of her books came from her mother who was one of the highest ranking soldiers in Arelsian’s forces; she went on multiple away missions to other worlds, trying to help free others from Monarch’s control before Arelsia was occupied. Her extensive knowledge of Signature technology plus the ability of her Master Signature make her an all-rounder, one who, given enough time, will defeat any obstacle in her way.
+"
+
+[node name="Description2" type="RichTextLabel" parent="Control/party_menu/Claire_sprite"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 414.0
+offset_right = 368.0
+offset_bottom = 649.0
+theme_override_font_sizes/normal_font_size = 30
+text = "HP: 3500
+Physical Attack: 80
+Aura Attack: 80
+Physical Defense: 80
+Aura Defense: 80
+Agility: 60
+BST: 480
+"
+
+[node name="Etho_sprite" type="TextureRect" parent="Control/party_menu"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -19.0
+offset_right = 213.0
+offset_bottom = 400.0
+texture = ExtResource("8_yx8ua")
+
+[node name="Description3" type="RichTextLabel" parent="Control/party_menu/Etho_sprite"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 414.0
+offset_right = 366.0
+offset_bottom = 649.0
+theme_override_font_sizes/normal_font_size = 30
+text = "HP: 4330
+Physical Attack: 135
+Aura Attack: 100
+Physical Defense: 90
+Aura Defense: 90
+Agility: 130
+BST: 615
+"
+
+[node name="Description" type="RichTextLabel" parent="Control/party_menu/Etho_sprite"]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 45.0
+offset_right = 587.0
+offset_bottom = 406.0
+text = "Trained to be a warrior, Etho is one of Monarch’s “experiments”; however, through unknown means, he was able to escape her grasp and flee from her main empirical planet. He spent many years alone, traveling from planet to planet in search of Arelsia, a place someone told him to go to if he ever escaped. Soon enough, he found his way to Miara, and on his way to Arelsia, saved Claire from being killed by Monarch’s forces. Although his brain is “scrambled”, his knowledge of war tactics surpasses most. He’s efficient and clean with his kills, using speed and power to overwhelm his opponents as a distinguished combatant. When partnered up with Claire’s strategies and Flynn and Kavya, his abilities surpass anything he could do on his own. After all, there is strength in numbers.
+
+"
+
+[node name="Flynn_sprite" type="TextureRect" parent="Control/party_menu"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -19.0
+offset_right = 213.0
+offset_bottom = 400.0
+texture = ExtResource("9_ftjeq")
+
+[node name="Description" type="RichTextLabel" parent="Control/party_menu/Flynn_sprite"]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 45.0
+offset_right = 587.0
+offset_bottom = 406.0
+text = "Free and confident, yet quiet and insecure, Flynn finds pride in fighting in the war, feeling happy to serve Arelsia (or maybe that has to do with his father being one of three directors of the Arelsian’s army). Before joining the war, though, he spent his childhood with Claire and her family, having fun writing music alongside Claire’s stories. Once her family was murdered and she received her Master Signature, Flynn has done what he can to keep Claire and her innocent smile from being turned into a weapon of mass destruction by his father and the other directors. Flynn took up the support role of healing and buffing the team on the battlefield. Using his specialized spell tags, he controls the battlefield from behind the scenes, helping procure a victory while keeping Claire alive at all costs. What he enjoys most, though, is preparing a battlefield with traps. Either way, he turns the battle in their favor when needed most."
+
+[node name="Description4" type="RichTextLabel" parent="Control/party_menu/Flynn_sprite"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 414.0
+offset_right = 366.0
+offset_bottom = 649.0
+theme_override_font_sizes/normal_font_size = 30
+text = "HP: 3980
+Physical Attack: 80
+Aura Attack: 110
+Physical Defense: 80
+Aura Defense: 80
+Agility: 100
+BST: 580
+"
+
+[node name="Kavya_sprite" type="TextureRect" parent="Control/party_menu"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -19.0
+offset_right = 213.0
+offset_bottom = 400.0
+texture = ExtResource("10_cg071")
+
+[node name="Description" type="RichTextLabel" parent="Control/party_menu/Kavya_sprite"]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 45.0
+offset_right = 587.0
+offset_bottom = 406.0
+text = "Cheerfully naive, Kavya joined the war effort only months ago. Before, she was just a simple girl gaining education to become a healer. However, she has desired to do her part and help “more” by fighting on the field. Her dream wouldn’t come true if it weren’t for the numerous attacks on her life. Only Arelsian soldiers get their Aura Pools evaluated, so no one knew about the massive size of Kavya’s Aura Pool which was the reasoning for so many of Monarch’s forces going after her. She joined Arelsia’s Special Forces under the invitation of Claire (they were classmates for a time!). Although she doesn’t know too much about the strategy and thinking of being in battle, she does her part by taking advantage of her Aura Pool to tank enemy attacks and provide protection to her teammates. This doesn’t mean she doesn’t dish out devastating magical attacks, some that literally flatten the battlefield.
+
+"
+
+[node name="Description5" type="RichTextLabel" parent="Control/party_menu/Kavya_sprite"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 414.0
+offset_right = 367.0
+offset_bottom = 649.0
+theme_override_font_sizes/normal_font_size = 30
+text = "HP: 5250
+Physical Attack: 70
+Aura Attack: 70
+Physical Defense: 120
+Aura Defense: 120
+Agility: 80
+BST: 660
+"
+
+[node name="options_menu" type="NinePatchRect" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_vp6uv")

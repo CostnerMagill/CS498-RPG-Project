@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://csdp5yqdf47pu"]
+
+[ext_resource type="Script" path="res://enemy_group.gd" id="1_4f4p4"]
+[ext_resource type="PackedScene" uid="uid://x7e2ohunok1l" path="res://character.tscn" id="2_ykes4"]
+[ext_resource type="Texture2D" uid="uid://duvputfq1e8h7" path="res://Assets/Animations/Kavya/Kavya_Walk_Right1.png" id="3_xcw6e"]
+[ext_resource type="Texture2D" uid="uid://i5qb4eqi73qc" path="res://Assets/Animations/Etho/Etho_Walk_Right1.png" id="4_pfvyf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gguef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xcw6e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2obd6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pfvyf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="enemy_group" type="Node2D"]
+script = ExtResource("1_4f4p4")
+
+[node name="enemy_1" parent="." instance=ExtResource("2_ykes4")]
+MAX_HEALTH = 200.0
+SPEED = 1.0
+
+[node name="AnimatedSprite2D" parent="enemy_1" index="0"]
+sprite_frames = SubResource("SpriteFrames_gguef")
+
+[node name="enemy_2" parent="." instance=ExtResource("2_ykes4")]
+MAX_HEALTH = 2.0
+SPEED = 11111.0
+
+[node name="AnimatedSprite2D" parent="enemy_2" index="0"]
+sprite_frames = SubResource("SpriteFrames_2obd6")
+
+[editable path="enemy_1"]
+[editable path="enemy_2"]

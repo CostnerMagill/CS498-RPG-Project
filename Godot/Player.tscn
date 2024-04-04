@@ -1,0 +1,113 @@
+[gd_scene load_steps=20 format=3 uid="uid://b720w1hgbcqul"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_2252w"]
+[ext_resource type="Texture2D" uid="uid://e30tw1tsngdu" path="res://Assets/Animations/Claire/Claire_Walk_Forward1.png" id="2_ldyhw"]
+[ext_resource type="Texture2D" uid="uid://bw5n3axw74pmt" path="res://Assets/Animations/Claire/Claire_Walk_Forward2.png" id="3_vnv5p"]
+[ext_resource type="Texture2D" uid="uid://nm03u43woong" path="res://Assets/Animations/Claire/Claire_Walk_Forward3.png" id="4_sp1wj"]
+[ext_resource type="Texture2D" uid="uid://dgy672c41384m" path="res://Assets/Animations/Claire/Claire_Walk_Forward4.png" id="5_3hykx"]
+[ext_resource type="Texture2D" uid="uid://cu3fag6msuvka" path="res://Assets/Animations/Claire/Claire_Walk_Backward1.png" id="6_4jro2"]
+[ext_resource type="Texture2D" uid="uid://bx3i3ub655mky" path="res://Assets/Animations/Claire/Claire_Walk_Backward2.png" id="7_0bd6k"]
+[ext_resource type="Texture2D" uid="uid://dnu1kp5w178s7" path="res://Assets/Animations/Claire/Claire_Walk_Backward3.png" id="8_x2wdw"]
+[ext_resource type="Texture2D" uid="uid://c6k8gxkd73hqi" path="res://Assets/Animations/Claire/Claire_Walk_Backward4.png" id="9_qsr7p"]
+[ext_resource type="Texture2D" uid="uid://db4sgwtkebcj3" path="res://Assets/Animations/Claire/Claire_Walk_Left1.png" id="10_x3gud"]
+[ext_resource type="Texture2D" uid="uid://cs87jp8yp6kkx" path="res://Assets/Animations/Claire/Claire_Walk_Left2.png" id="11_kygx5"]
+[ext_resource type="Texture2D" uid="uid://bal2ok2gblj11" path="res://Assets/Animations/Claire/Claire_Walk_Left3.png" id="12_4mrvb"]
+[ext_resource type="Texture2D" uid="uid://ba0yieu168lhc" path="res://Assets/Animations/Claire/Claire_Walk_Left4.png" id="13_h8hhl"]
+[ext_resource type="Texture2D" uid="uid://7yhrnq2dgnl6" path="res://Assets/Animations/Claire/Claire_Walk_Right1.png" id="14_kntgd"]
+[ext_resource type="Texture2D" uid="uid://b737jrswp42qp" path="res://Assets/Animations/Claire/Claire_Walk_Right2.png" id="15_b5i37"]
+[ext_resource type="Texture2D" uid="uid://ca3668nobdrvp" path="res://Assets/Animations/Claire/Claire_Walk_Right3.png" id="16_mn1bf"]
+[ext_resource type="Texture2D" uid="uid://edkheihviqcn" path="res://Assets/Animations/Claire/Claire_Walk_Right4.png" id="17_x34wm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u82g8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ldyhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vnv5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sp1wj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3hykx")
+}],
+"loop": true,
+"name": &"WalkBackward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4jro2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0bd6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x2wdw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qsr7p")
+}],
+"loop": true,
+"name": &"WalkForward",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_x3gud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kygx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4mrvb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_h8hhl")
+}],
+"loop": true,
+"name": &"WalkLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_kntgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_b5i37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mn1bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_x34wm")
+}],
+"loop": true,
+"name": &"WalkRight",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dqha"]
+size = Vector2(16, 16)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 3
+z_as_relative = false
+texture_filter = 1
+position = Vector2(256, 257)
+script = ExtResource("1_2252w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u82g8")
+animation = &"WalkRight"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_0dqha")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+zoom = Vector2(3.5, 3.5)
+position_smoothing_enabled = true
