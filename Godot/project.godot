@@ -12,7 +12,7 @@ config_version=5
 
 config/name="CS 498 RPG Project"
 run/main_scene="res://Main.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -22,6 +22,10 @@ Events="*res://events.gd"
 [display]
 
 window/stretch/mode="viewport"
+
+[editor]
+
+run/main_run_args="--rendering-driver opengl3"
 
 [input]
 

@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://u8fyc3sh3r4y"]
+
+[ext_resource type="Script" path="res://player_group.gd" id="1_8mgcn"]
+[ext_resource type="PackedScene" uid="uid://x7e2ohunok1l" path="res://character.tscn" id="2_kr5fn"]
+[ext_resource type="Texture2D" uid="uid://cjv513yfbfhvk" path="res://Assets/Animations/Flynn/Flynn_Walk_Left1.png" id="3_pyvi2"]
+[ext_resource type="Texture2D" uid="uid://db4sgwtkebcj3" path="res://Assets/Animations/Claire/Claire_Walk_Left1.png" id="4_rsmo0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nisd0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pyvi2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6y40l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rsmo0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="player_group" type="Node2D"]
+script = ExtResource("1_8mgcn")
+
+[node name="char1" parent="." instance=ExtResource("2_kr5fn")]
+MAX_HEALTH = 30.0
+SPEED = 40.0
+
+[node name="AnimatedSprite2D" parent="char1" index="0"]
+sprite_frames = SubResource("SpriteFrames_nisd0")
+
+[node name="char2" parent="." instance=ExtResource("2_kr5fn")]
+MAX_HEALTH = 3333.0
+SPEED = 2.0
+
+[node name="AnimatedSprite2D" parent="char2" index="0"]
+sprite_frames = SubResource("SpriteFrames_6y40l")
+
+[editable path="char1"]
+[editable path="char2"]

@@ -1,8 +1,290 @@
-[gd_scene load_steps=2 format=3 uid="uid://bri57bk0ms70l"]
+[gd_scene load_steps=6 format=3 uid="uid://sv0l3itv4n4s"]
 
-[ext_resource type="Script" path="res://battle_scene.gd" id="1_5s2b0"]
+[ext_resource type="PackedScene" uid="uid://u8fyc3sh3r4y" path="res://player_group.tscn" id="1_a0scq"]
+[ext_resource type="Script" path="res://battle-scene.gd" id="1_qjai2"]
+[ext_resource type="PackedScene" uid="uid://csdp5yqdf47pu" path="res://enemy_group.tscn" id="2_o4ljd"]
+[ext_resource type="Texture2D" uid="uid://bumjm3jmm8tf" path="res://Assets/UI/Battle-UI/battle-template_white.png" id="4_xkiw2"]
+[ext_resource type="Texture2D" uid="uid://bwhu2wk5mplqs" path="res://Assets/UI/Battle-UI/syringe.png" id="5_3276i"]
 
-[node name="BattleScene" type="Node2D"]
-script = ExtResource("1_5s2b0")
+[node name="battle_scene" type="Node2D"]
+script = ExtResource("1_qjai2")
+
+[node name="player_group" parent="." instance=ExtResource("1_a0scq")]
+position = Vector2(1013, 58)
+
+[node name="enemy_group" parent="." instance=ExtResource("2_o4ljd")]
+position = Vector2(87, 45)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchor_top = -0.000246872
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.159973
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 0.683642
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.152
+offset_bottom = 1.52588e-05
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.419608)
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023
+anchor_top = 0.651202
+anchor_right = 0.956597
+anchor_bottom = 1.0
+offset_left = -0.496002
+offset_top = 0.0210018
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_xkiw2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Enemies" type="VBoxContainer" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.91907
+anchor_top = 0.745437
+anchor_right = 0.976069
+anchor_bottom = 0.972241
+offset_left = 0.231934
+offset_top = -0.0430031
+offset_right = 0.567993
+offset_bottom = -0.0120087
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="1" type="Label" parent="UI/Control/Enemies"]
+layout_mode = 2
+size_flags_vertical = 7
+text = "Enemy 1"
+
+[node name="2" type="Label" parent="UI/Control/Enemies"]
+layout_mode = 2
+size_flags_vertical = 7
+text = "Enemy 2"
+
+[node name="3" type="Label" parent="UI/Control/Enemies"]
+layout_mode = 2
+size_flags_vertical = 7
+text = "Enemy 3"
+
+[node name="4" type="Label" parent="UI/Control/Enemies"]
+layout_mode = 2
+size_flags_vertical = 7
+text = "Enemy 4"
+
+[node name="Party" type="VBoxContainer" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.012
+anchor_top = 0.745437
+anchor_right = 0.06
+anchor_bottom = 0.983148
+offset_left = 0.176
+offset_top = -0.0430031
+offset_right = -0.120003
+offset_bottom = -0.0800171
+metadata/_edit_use_anchors_ = true
+
+[node name="Claire" type="Label" parent="UI/Control/Party"]
+layout_mode = 2
+size_flags_vertical = 7
+text = "Claire"
+
+[node name="Etho" type="Label" parent="UI/Control/Party"]
+layout_mode = 2
+size_flags_vertical = 7
+text = "Etho"
+
+[node name="Flynn" type="Label" parent="UI/Control/Party"]
+layout_mode = 2
+size_flags_vertical = 7
+text = "Flynn"
+
+[node name="Kavya" type="Label" parent="UI/Control/Party"]
+layout_mode = 2
+size_flags_vertical = 7
+text = "Kavya"
+
+[node name="Party_healthbar" type="VBoxContainer" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.082
+anchor_top = 0.739
+anchor_right = 0.201
+anchor_bottom = 0.96
+offset_left = 0.535995
+offset_top = 0.127991
+offset_right = 0.447998
+offset_bottom = -0.0800171
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/Control/Party_healthbar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProgressBar2" type="ProgressBar" parent="UI/Control/Party_healthbar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProgressBar3" type="ProgressBar" parent="UI/Control/Party_healthbar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProgressBar4" type="ProgressBar" parent="UI/Control/Party_healthbar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Enemies_healthbar" type="VBoxContainer" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.766
+anchor_top = 0.719255
+anchor_right = 0.919
+anchor_bottom = 0.972293
+offset_left = 0.567993
+offset_top = -0.0769958
+offset_right = 0.312012
+offset_bottom = -0.0460052
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/Control/Enemies_healthbar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProgressBar2" type="ProgressBar" parent="UI/Control/Enemies_healthbar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProgressBar3" type="ProgressBar" parent="UI/Control/Enemies_healthbar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProgressBar4" type="ProgressBar" parent="UI/Control/Enemies_healthbar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Attack_Box" type="HBoxContainer" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.341
+anchor_top = 0.7195
+anchor_right = 0.647
+anchor_bottom = 0.878167
+offset_left = 0.167969
+offset_right = -78.344
+offset_bottom = -35.8164
+scale = Vector2(1.28599, 1.16164)
+theme_override_constants/separation = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Purple_Claire" type="ColorRect" parent="UI/Control/Attack_Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 0, 1, 1)
+
+[node name="Green_Etho" type="ColorRect" parent="UI/Control/Attack_Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.372549, 0.72549, 0, 1)
+
+[node name="Orange_Flynn" type="ColorRect" parent="UI/Control/Attack_Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.933333, 0.486275, 0.00392157, 1)
+
+[node name="Blue_Kavya" type="ColorRect" parent="UI/Control/Attack_Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.0745098, 0.654902, 1, 1)
+
+[node name="Item_Box" type="HBoxContainer" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.341146
+anchor_top = 0.838763
+anchor_right = 0.647
+anchor_bottom = 1.01696
+offset_top = 8.48163
+offset_right = -78.344
+offset_bottom = -35.9895
+scale = Vector2(1.28599, 1.16164)
+theme_override_constants/separation = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Item_Grey" type="ColorRect" parent="UI/Control/Item_Box"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.780392, 0.545098, 0.623529, 1)
+
+[node name="Attack" type="Label" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.41
+anchor_top = 0.719031
+anchor_right = 0.587
+anchor_bottom = 1.09103
+offset_left = -0.320038
+offset_top = 0.0680037
+offset_right = -46.224
+offset_bottom = -0.984001
+scale = Vector2(1.29184, 1.01317)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 51
+text = "Attack"
+metadata/_edit_use_anchors_ = true
+
+[node name="Attack2" type="Label" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.429965
+anchor_top = 0.851747
+anchor_right = 0.606965
+anchor_bottom = 0.969111
+offset_left = -0.320038
+offset_top = 0.0680037
+offset_right = -46.224
+offset_bottom = -0.984001
+scale = Vector2(1.29184, 1.01317)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 51
+text = "Item"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.360736
+anchor_top = 0.861049
+anchor_right = 0.414736
+anchor_bottom = 0.956827
+offset_left = -0.568024
+offset_top = 0.0400009
+offset_right = -22.776
+offset_bottom = -18.024
+scale = Vector2(1.57363, 1.45227)
+texture = ExtResource("5_3276i")
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[connection signal="next_player" from="enemy_group" to="player_group" method="_on_enemy_group_next_player"]

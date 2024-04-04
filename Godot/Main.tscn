@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b720w1hgbcqul" path="res://Player.tscn" id="1_xko41"]
 [ext_resource type="PackedScene" uid="uid://rrq18e4cuhrg" path="res://dungeon_floor_5.tscn" id="2_h4p1p"]
 [ext_resource type="PackedScene" uid="uid://c28rnwr33kxus" path="res://dungeon_floor_6.tscn" id="3_o5vo8"]
-[ext_resource type="PackedScene" uid="uid://bri57bk0ms70l" path="res://battle_scene.tscn" id="4_76gt5"]
+[ext_resource type="PackedScene" uid="uid://sv0l3itv4n4s" path="res://battle_scene.tscn" id="4_76gt5"]
 [ext_resource type="PackedScene" uid="uid://cxsmxyoxlkab0" path="res://Scenes/character_menu.tscn" id="5_1kw3h"]
 
 [node name="Main" type="Node2D"]
