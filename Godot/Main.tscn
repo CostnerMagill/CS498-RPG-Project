@@ -15,6 +15,4 @@
 [node name="dungeonFloor6" parent="." instance=ExtResource("3_o5vo8")]
 position = Vector2(0, -619)
 
-[node name="BattleScene" parent="." instance=ExtResource("4_76gt5")]
-
 [node name="Character_Menu" parent="." instance=ExtResource("5_1kw3h")]
